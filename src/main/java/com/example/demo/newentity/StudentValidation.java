@@ -9,7 +9,7 @@ package com.example.demo.newentity;
  @Entity
  @Table(name="Student")
  
- public class NewfileEntity {
+ public class StudentValidation {
     @Id 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
