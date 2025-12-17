@@ -22,7 +22,7 @@ public class StudentServiceImpl implements StudentService{
     }
     @Override
     public List<StudentValidation> getall(){
-        return rep.getall();
+        return rep.findAll();
     }
     @Override
     public Student update(Long id,StudentEntity st){
@@ -30,6 +30,6 @@ public class StudentServiceImpl implements StudentService{
     }
     @Override
     public void delete(Long id){
-        rep.remove(id)
+        rep.deleteById(id)
     }
 }
