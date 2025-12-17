@@ -26,10 +26,14 @@ public class StudentServiceImpl implements StudentService{
     }
     @Override
     public Student update(Long id,StudentEntity st){
-        return rep.update(id,newfile)
+        NewFileEntity existing=getValId(id);
+        existing.setName(Newfile.getName());
+        existing.setEmail(Newfile.getEmail());
+
+        return rep.save(existing);
     }
     @Override
     public void delete(Long id){
-        rep.deleteById(id)
+        rep.delete(id)
     }
 }
