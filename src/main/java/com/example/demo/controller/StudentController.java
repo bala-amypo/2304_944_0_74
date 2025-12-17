@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-public class Studentcontroller {
+public class StudentController {
     @Autowired
-    Studentservice src;
+    StudentService src;
     @PostMapping("/post")
 
     public Student postdata(@RequestBody Student st){
@@ -35,5 +35,13 @@ public class Studentcontroller {
         return src.id(id);
     }
 
-    public 
+    @PutMapping("/update/{id}")
+    public Student updateVal(@PathVariable int id,@RequestBody Student st){
+        return src.updid(id,st);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public Student deleteVal(@PathVariable int id){
+        return src.dltid(id);
+    }
 }
