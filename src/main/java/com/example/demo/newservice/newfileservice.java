@@ -6,6 +6,6 @@ public interface StudentValidation{
     StudentValidation savedata(StudentValidation newfile);
     StudentValidation getid(Long id);
     List<StudentValidation> getall();
-    StudentValidation update(Long ig,StudentValidation newfile);
+    StudentValidation update(Long id,StudentValidation newfile);
     void delete(Long id);
 }

@@ -18,18 +18,18 @@ public class StudentServiceImpl implements StudentService{
     }
     @Override
     public StudentValildation getidval(Long id){
-        return rep.get(id);
+        return rep.findById(id);
     }
     @Override
     public List<StudentValidation> getall(){
-        return rep.get();
+        return rep.getall();
     }
     @Override
     public Student update(Long id,StudentEntity st){
-        return rep.update(id,st)
+        return rep.update(id,newfile)
     }
     @Override
     public void delete(Long id){
-        return rep.remove(id)
+        rep.remove(id)
     }
 }
