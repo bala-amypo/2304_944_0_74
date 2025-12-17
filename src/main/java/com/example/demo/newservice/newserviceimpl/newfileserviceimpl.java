@@ -5,18 +5,17 @@ import com.example.demo.newservice.NewService;
 public class NewServiceImpl implements NewService {
 
     @Override
-    public Stude{
-        // TODO Auto-generated method stub
-        return super.clone();
+    public StudentValidation savedata(StudentValidation newfile){
+        
     }
 
     @Override
-    public boolean equals(Object arg0) {
+    public StudentValidation getidval(Long id) {
         return super.equals(arg0);
     }
 
     @Override
-    protected void finalize() throws Throwable {
+    {
         super.finalize();
     }
 

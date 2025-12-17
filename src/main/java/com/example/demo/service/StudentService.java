@@ -1,12 +1,30 @@
-package com. example.demo.service;
-import java.util.List;
+package com.example.service.impl;
+import java.util.*;
+import org.springframework.stereotype.Service;
+import com.example.demo.entity.StudentEntity;
+import com.example.demo.service.StudentService;
+@Service
+public class StudentServiceImpl implements StudentService{
 
-import java.util.Optional;
-import com.example.demo.entity.Student;
+    private final 
+    @Override
+    public StudentValidation savedata(StudentValidation st){
 
-public interface StudentService {
-    Student insertStudent(Student st);
-    List<Student> getAllStudents();
-    Optional<Student> getOneStudent(Long id);
-    void deleteStudent(Long id);
+    }
+    @Override
+    public StudentValildation getidval(Long id){
+
+    }
+    @Override
+    public List<StudentValidation> getall(){
+
+    }
+    @Override
+    public Student update(Long id,StudentEntity st){
+
+    }
+    @Override
+    public void delete(Long id){
+
+    }
 }
