@@ -1,48 +1,50 @@
 package com.example.demo.newcontroller;
 
-import java.util.*;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.entity.Student;
+import com.example.demo.newentity.NewfileEntity;
+import com.example.demo.newservice.NewfileService;
 
-import com.example.demo.newentity.StudentValidation;
-import com.example.demo.newservice.newfileservice;
+import java.util.List;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-
+@RestController
 @RequestMapping("/students")
-public class newFileControl{
-    private final newfileservice service;
-    @Autowired
-    newfileservice src;
-    @PostMapping("/post")
+public class newcontroller {
 
-    public StudentValidation postdata(@RequestBody Studententity st){
-        return src.savedata(st);
+    private final NewfileService service;
+
+    public StudentController(NewfileService service) {
+        this.service = service;
     }
 
-    @GetMapping("/get")
-    public List<Studententity> getdata(){
-        return src.retdata();
+    @PostMapping
+    public ResponseEntity<Student> createStudent(@Valid @RequestBodyStudent service) {
+        return new ResponseEntity<>(service.saveStudent(student),HttpStatus.CREATED);
     }
 
-    @GetMapping("/getid/{id}")
-    public StudentValidation getIdVal(@PathVariable int id){
-        return src.id(id);
+    @GetMapping
+    public List<NewfileEntity> getall() {
+        return service.getall();
     }
 
-    @PutMapping("/update/{id}")
-    public StudentValidation updateVal(@PathVariable int id,@RequestBody Studententity st){
-        return src.updid(id,st);
+    @GetMapping("/{id}")
+    public NewfileEntity getStudent(@PathVariable Long id) {
+        return service.getidval(id);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public StudentValidation deleteVal(@PathVariable int id){
-        return src.dltid(id);
+    @PutMapping("/{id}")
+    public NewfileEntity updateStudent(@PathVariable Long id,
+    @Valid @RequestBody Student student) {
+        return service.update(id, student);
     }
+
+    // @DeleteMapping("/{id}")
+    // public ResponseEntity<String> deleteStudent(@PathVariable Long id) {
+    //     service.deleteStudent(id);
+    //     return ResponseEntity.ok("Student deleted successfully");
+    // }
 }
