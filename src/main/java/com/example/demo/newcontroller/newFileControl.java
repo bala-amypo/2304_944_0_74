@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RequestMapping("/students")
 public class newFileControl{
-    private final newfileservice
+    private final newfileservice service;
     @Autowired
     newfileservice src;
     @PostMapping("/post")
@@ -46,3 +46,4 @@ public class newFileControl{
         return src.dltid(id);
     }
 }
+
