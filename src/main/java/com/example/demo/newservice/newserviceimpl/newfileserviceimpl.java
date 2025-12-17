@@ -1,33 +1,32 @@
-package com.example.classes.newservice.newserviceimpl;
+package com.example.service.impl;
+import java.util.*;
+import org.springframework.stereotype.Service;
+import com.example.demo.entity.StudentEntity;
+import com.example.demo.service.StudentService;
+@Service
+public class StudentServiceImpl implements StudentService{
 
-import com.example.demo.newservice.NewService;
+    private final NewFileRepo rep;
 
-public class NewServiceImpl implements NewService {
-
+    public New
     @Override
-    public StudentValidation savedata(StudentValidation newfile){
-        
+    public StudentValidation savedata(StudentValidation st){
+        return rep.save(newfile);
     }
-
     @Override
-    public StudentValidation getidval(Long id) {
-        return super.equals(arg0);
-    }
+    public StudentValildation getidval(Long id){
 
-    @Override
-    {
-        super.finalize();
     }
+    @Override
+    public List<StudentValidation> getall(){
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
     }
+    @Override
+    public Student update(Long id,StudentEntity st){
 
-    @Override
-    public String toString() {
-        return super.toString();
     }
-    
-    
+    @Override
+    public void delete(Long id){
+
+    }
 }
