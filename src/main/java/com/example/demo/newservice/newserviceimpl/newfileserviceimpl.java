@@ -1,11 +1,11 @@
 package com.example.service.impl;
 import java.util.*;
 import org.springframework.stereotype.Service;
-import com.example.demo.entity.StudentEntity;
-import com.example.demo.service.StudentService;
+import com.example.demo.newentity.StudentValidation;
+import com.example.demo.newservice.newfileservice;
 
 @Service
-public class StudentServiceImpl implements StudentService{
+public class newfileserviceimpl implements newservice{
 
     private final NewFileRepo rep;
 
@@ -17,7 +17,7 @@ public class StudentServiceImpl implements StudentService{
         return rep.save(newfile);
     }
     @Override
-    public StudentValildation getidval(Long id){
+    public StudentValildation getid(Long id){
         return rep.findById(id);
     }
     @Override
@@ -25,7 +25,7 @@ public class StudentServiceImpl implements StudentService{
         return rep.findAll();
     }
     @Override
-    public Student update(Long id,StudentEntity st){
+    public StudentValidation update(Long id,StudentValidation st){
         NewFileEntity existing=getValId(id);
         existing.setName(Newfile.getName());
         existing.setEmail(Newfile.getEmail());
