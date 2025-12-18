@@ -14,9 +14,7 @@ Map<Integer,Studententity> mp=new HashMap<>();
          return new ArrayList<>(mp.values());
     }
     public Studententity id(int id) {
-        
-       // throw new UnsupportedOperationException("Unimplemented method 'id'");
-       return mp.get(id);
+           return mp.get(id);
     }
    
     public Studententity updateStudent(int id, Studententity st) {
