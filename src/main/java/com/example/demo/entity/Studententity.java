@@ -4,7 +4,10 @@ package com.example.demo.entity;
 
 public class Studententity {
    
+    @Column
     private String name;
+
+    @Id
     private int id;
     private String email;
     public String getName() {
