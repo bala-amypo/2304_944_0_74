@@ -1,41 +1,36 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.*;
-public class Studententity{
 
-    private Long id;
+
+public class Studententity {
+   
     private String name;
+    private int id;
     private String email;
-    private float cgpa;
-
-    public Studententity(Long id,String name,String email,float cgpa){
-        this.id=id;
-        this.name=name;
-        this.email=email;
-    }
-
-    public Studententity(){
-
-    }
-
-    public Long getId(){
-        return id;
-    }
-    public void setId(Long id){
-        this.id=id;
-    }
-
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public void setName(String name){
-        this.name=name;
+    public int getId() {
+        return id;
     }
-
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
-    public void setEmail(String email){
-        this.email=email;
+    public void setName(String name) {
+        this.name = name;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public Studententity(String name, int id, String email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
+    public Studententity() {
+    }
+    
 }
