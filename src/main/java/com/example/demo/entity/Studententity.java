@@ -1,21 +1,21 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-public class Student{
+public class Studententity{
 
     private Long id;
     private String name;
     private String email;
     private float cgpa;
 
-    public Student(Long id,String name,String email,float cgpa){
+    public Studententity(Long id,String name,String email,float cgpa){
         this.id=id;
         this.name=name;
         this.email=email;
         this.cgpa=cgpa;
     }
 
-    public Student(){
+    public Studententity(){
 
     }
 
