@@ -12,7 +12,6 @@ public class Studententity{
         this.id=id;
         this.name=name;
         this.email=email;
-        this.cgpa=cgpa;
     }
 
     public Studententity(){
@@ -38,12 +37,5 @@ public class Studententity{
     }
     public void setEmail(String email){
         this.email=email;
-    }
-
-    public String getCgpa(){
-        return cgpa;
-    }
-    public void setCgpa(String cgpa){
-        this.cgpa=cgpa;
     }
 }
