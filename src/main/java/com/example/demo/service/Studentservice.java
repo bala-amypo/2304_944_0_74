@@ -1,30 +1,29 @@
-package com.example.service.impl;
+package com.example.demo.service;
+
 import java.util.*;
 import org.springframework.stereotype.Service;
-import com.example.demo.entity.StudentEntity;
-import com.example.demo.service.StudentService;
+import com.example.demo.entity.Studententity;
 @Service
-public class StudentServiceImpl implements StudentService{
-
-    private final 
-    @Override
-    public StudentValidation savedata(StudentValidation st){
-
+public class Studentservice {
+Map<Integer,Studententity> mp=new HashMap<>();
+    public Studententity savedata(Studententity st){
+        mp.put(st.getId(),st);
+        return st;
     }
-    @Override
-    public StudentValildation getidval(Long id){
-
+    public List<Studententity> retdata() {
+         return new ArrayList<>(mp.values());
     }
-    @Override
-    public List<StudentValidation> getall(){
-
+    public Studententity id(int id) {
+        
+       // throw new UnsupportedOperationException("Unimplemented method 'id'");
+       return mp.get(id);
     }
-    @Override
-    public Student update(Long id,StudentEntity st){
-
+   
+    public Studententity updateStudent(int id, Studententity st) {
+     mp.replace(id,st);
+     return mp.get(id);
     }
-    @Override
-    public void delete(Long id){
-
+    public Studententity deleteStudent(int id) {
+       return mp.remove(id);
     }
 }
